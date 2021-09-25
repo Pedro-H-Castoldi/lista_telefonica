@@ -42,10 +42,8 @@ class _HomePageState extends State<HomePage> {
                   itemBuilder: (context, index) {
                   return Card(
                     child: ListTile(
-                      title: Text(snapshot.data![index].name),
-                      subtitle:
-                        Text(snapshot.data![index].phone.toString()),
-                      leading: Text(snapshot.data![index].address),
+                      title: Text('${snapshot.data![index].name} - ${snapshot.data![index].phone.toString()}'),
+                      subtitle: Text(snapshot.data![index].address),
                     ),
                   );
                   },
