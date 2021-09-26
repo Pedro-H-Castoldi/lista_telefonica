@@ -82,7 +82,7 @@ class _$DataBaseApp extends DataBaseApp {
       },
       onCreate: (database, version) async {
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `Task` (`name` TEXT NOT NULL, `phone` INTEGER NOT NULL, `address` TEXT NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT, `created` TEXT NOT NULL)');
+            'CREATE TABLE IF NOT EXISTS `Task` (`name` TEXT NOT NULL, `phone` TEXT NOT NULL, `address` TEXT NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT, `created` TEXT NOT NULL)');
 
         await callback?.onCreate?.call(database, version);
       },
@@ -152,7 +152,7 @@ class _$TaskRepositoryDAO extends TaskRepositoryDAO {
             id: row['id'] as int?,
             created: row['created'] as String,
             name: row['name'] as String,
-            phone: row['phone'] as int,
+            phone: row['phone'] as String,
             address: row['address'] as String),
         arguments: [id]);
   }
@@ -164,7 +164,7 @@ class _$TaskRepositoryDAO extends TaskRepositoryDAO {
             id: row['id'] as int?,
             created: row['created'] as String,
             name: row['name'] as String,
-            phone: row['phone'] as int,
+            phone: row['phone'] as String,
             address: row['address'] as String));
   }
 

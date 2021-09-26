@@ -12,7 +12,7 @@ class Task extends BaseEntity {
   }): super(id, created);
 
   final String name;
-  final int phone;
+  final String phone;
   final String address;
 
 }

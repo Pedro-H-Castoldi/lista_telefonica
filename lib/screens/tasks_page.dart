@@ -19,7 +19,7 @@ class TasksPage extends StatelessWidget {
             if(_nameController.text.isNotEmpty && _phoneController.text.isNotEmpty && _adressController.text.isNotEmpty) {
               db.taskRepositoryDAO.insertItem(Task(
                 name: _nameController.text,
-                phone: _phoneController.hashCode,
+                phone: _phoneController.text,
                 address: _adressController.text,
                 created: DateTime.now().toUtc().toString(),
               ));
